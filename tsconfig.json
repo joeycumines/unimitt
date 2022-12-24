@@ -3,8 +3,10 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "build",
-    "module": "ESNext",
-    "target": "ESNext"
+    "module": "esnext",
+    "target": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext"
   },
   "include": [
     "src/**/*.ts",
