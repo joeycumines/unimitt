@@ -133,7 +133,7 @@ const emitter: Emitter<Events> = unimitt<Events>();
 
 Unimitt: Tiny (~200b) functional event emitter / pubsub.
 
-Returns **Unimitt** 
+Returns **Unimitt**&#x20;
 
 ### all
 
