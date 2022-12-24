@@ -1,11 +1,13 @@
 {
-	"compileOnSave": false,
-	"compilerOptions": {
-		"strict": true,
-		"noEmit": true,
-		"declaration": true,
-		"moduleResolution": "node",
-		"esModuleInterop": true
-	},
-	"include": ["src/*.ts", "test/*.ts"]
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "build",
+    "module": "ESNext",
+    "target": "ESNext"
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
 }

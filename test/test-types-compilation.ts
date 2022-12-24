@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
 
-import mitt from '..';
+import unimitt from '../src';
 
 interface SomeEventData {
 	name: string;
 }
 
-const emitter = mitt<{
+const emitter = unimitt<{
 	foo: string;
 	someEvent: SomeEventData;
 	bar?: number;
