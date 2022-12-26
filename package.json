@@ -70,7 +70,9 @@
       "/.gitignore",
       "/.prettierrc.js",
       "/jest.config.ts",
-      "tsconfig.json"
+      "/tsconfig.json",
+      "/.idea",
+      "/.github"
     ]
   }
 }
