@@ -122,6 +122,7 @@ const emitter: Emitter<Events> = unimitt<Events>();
 
 *   [unimitt](#unimitt)
 *   [all](#all)
+*   [groups](#groups)
 *   [on](#on)
     *   [Parameters](#parameters)
 *   [off](#off)
@@ -139,6 +140,10 @@ Returns **Unimitt**&#x20;
 
 A Map of event names to registered handler functions.
 
+### groups
+
+A map of event names, to queue groups, to registered handler functions.
+
 ### on
 
 Register an event handler for the given type.
@@ -147,16 +152,19 @@ Register an event handler for the given type.
 
 *   `type` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [symbol](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol))** Type of event to listen for, or `'*'` for all events
 *   `handler` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** Function to call in response to given event
+*   `group` **any?**&#x20;
 
 ### off
 
 Remove an event handler for the given type.
-If `handler` is omitted, all handlers of the given type are removed.
+If `handler` is omitted, all handlers of the given type are removed, including groups, unless a group is
+specified, in which case all handlers for that group are removed (but not other groups, or non-group handlers).
 
 #### Parameters
 
 *   `type` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [symbol](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol))** Type of event to unregister `handler` from (`'*'` to remove a wildcard handler)
 *   `handler` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)?** Handler function to remove
+*   `group` **any?**&#x20;
 
 ### emit
 

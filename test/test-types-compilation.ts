@@ -1,16 +1,79 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
 
-import unimitt from '../src';
+import unimitt, {
+  Emitter,
+  EventHandlerMap,
+  EventType,
+  Handler,
+  QueueGroupMap,
+  WildcardHandler,
+} from '../src';
+
+/**
+ * Original mitt v3 interface.
+ */
+interface MittEmitter<Events extends Record<EventType, unknown>> {
+  all: EventHandlerMap<Events>;
+
+  on<Key extends keyof Events>(type: Key, handler: Handler<Events[Key]>): void;
+
+  on(type: '*', handler: WildcardHandler<Events>): void;
+
+  off<Key extends keyof Events>(
+    type: Key,
+    handler?: Handler<Events[Key]>
+  ): void;
+
+  off(type: '*', handler: WildcardHandler<Events>): void;
+
+  emit<Key extends keyof Events>(type: Key, event: Events[Key]): void;
+
+  emit<Key extends keyof Events>(
+    type: undefined extends Events[Key] ? Key : never
+  ): void;
+}
+
+interface CombinedEmitter<Events extends Record<EventType, unknown>>
+  extends MittEmitter<Events> {
+  groups: QueueGroupMap<Events>;
+
+  on<Key extends keyof Events>(
+    type: Key,
+    handler: Handler<Events[Key]>,
+    group?: unknown
+  ): void;
+
+  on(type: '*', handler: WildcardHandler<Events>, group?: unknown): void;
+
+  off<Key extends keyof Events>(
+    type: Key,
+    handler?: Handler<Events[Key]>,
+    group?: unknown
+  ): void;
+
+  off(type: '*', handler: WildcardHandler<Events>, group?: unknown): void;
+}
 
 interface SomeEventData {
   name: string;
 }
 
-const emitter = unimitt<{
+type IEvents = {
   foo: string;
   someEvent: SomeEventData;
   bar?: number;
-}>();
+};
+
+const emitter = unimitt<IEvents>();
+
+const mittEmitter = emitter as MittEmitter<IEvents>;
+
+const combinedEmitter = emitter as CombinedEmitter<IEvents>;
+
+const combinedEmitterToEmitter = combinedEmitter as Emitter<IEvents>;
+
+const combinedEmitterToToEmitterToMittEmitter =
+  combinedEmitterToEmitter as MittEmitter<IEvents>;
 
 const barHandler = (x?: number) => {};
 const fooHandler = (x: string) => {};
