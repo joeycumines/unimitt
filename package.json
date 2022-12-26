@@ -54,7 +54,7 @@
     "posttest": "npm run lint",
     "jest": "jest",
     "docs": "documentation readme src/index.ts --section API -q --parse-extension ts",
-    "release": "npm run -s build -s && npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
+    "release": "npm run -s build -s && npm t && git commit -am v$npm_package_version && git tag v$npm_package_version && git push && git push --tags && npm publish",
     "typecheck": "tsc --noEmit",
     "test-types": "tsc test/test-types-compilation.ts --noEmit --strict",
     "prepack": "npmignore --auto"
