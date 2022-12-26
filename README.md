@@ -8,11 +8,11 @@
 
 # Unimitt
 
-> Tiny 200b functional event emitter / pubsub.
+> Tiny 600b functional event emitter / pubsub.
 
 **This fork extends [mitt](https://github.com/developit/mitt) to add support for randomized one-to-one pub-sub.**
 
-*   **Microscopic:** weighs less than 200 bytes gzipped
+*   **Microscopic:** weighs less than 600 bytes gzipped
 *   **Useful:** a wildcard `"*"` event type listens to all events
 *   **Familiar:** same names & ideas as [Node's EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter)
 *   **Functional:** methods don't rely on `this`
@@ -132,7 +132,7 @@ const emitter: Emitter<Events> = unimitt<Events>();
 
 ### unimitt
 
-Unimitt: Tiny (~200b) functional event emitter / pubsub.
+Unimitt: Tiny (~600b) functional event emitter / pubsub.
 
 Returns **Unimitt**&#x20;
 

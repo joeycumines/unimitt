@@ -70,7 +70,7 @@ export interface Emitter<Events extends Record<EventType, unknown>> {
 }
 
 /**
- * Unimitt: Tiny (~200b) functional event emitter / pubsub.
+ * Unimitt: Tiny (~600b) functional event emitter / pubsub.
  * @name unimitt
  * @returns {Unimitt}
  */
