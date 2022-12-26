@@ -72,7 +72,8 @@
       "/jest.config.ts",
       "/tsconfig.json",
       "/.idea",
-      "/.github"
+      "/.github",
+      "/build/test"
     ]
   }
 }
