@@ -1,6 +1,6 @@
 {
   "name": "unimitt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extends \"mitt\" to add support for randomized one-to-one pub-sub.",
   "repository": "joeycumines/unimitt",
   "keywords": [
@@ -62,7 +62,6 @@
   "publishConfig": {
     "ignore": [
       "!/build",
-      "/src",
       "/test",
       "/.editorconfig",
       "/.eslintignore",
