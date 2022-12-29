@@ -1,6 +1,6 @@
 {
   "name": "unimitt",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Extends \"mitt\" to add support for randomized one-to-one pub-sub.",
   "repository": "joeycumines/unimitt",
   "keywords": [
@@ -32,12 +32,11 @@
   },
   "type": "commonjs",
   "source": "src/index.ts",
-  "types": "build/index.d.ts",
   "main": "build/unimitt.js",
   "module": "build/unimitt.mjs",
   "unpkg": "build/unimitt.umd.js",
   "exports": {
-    "types": "./build/index.d.ts",
+    "types": "./build/src/index.d.ts",
     "import": "./build/unimitt.mjs",
     "require": "./build/unimitt.js",
     "default": "./build/unimitt.mjs"
