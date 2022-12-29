@@ -1,6 +1,6 @@
 {
   "name": "unimitt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Extends \"mitt\" to add support for randomized one-to-one pub-sub.",
   "repository": "joeycumines/unimitt",
   "keywords": [
@@ -32,6 +32,7 @@
   },
   "type": "commonjs",
   "source": "src/index.ts",
+  "types": "build/src/index.d.ts",
   "main": "build/unimitt.js",
   "module": "build/unimitt.mjs",
   "unpkg": "build/unimitt.umd.js",
@@ -46,7 +47,7 @@
     "build": "npm-run-all --silent clean -p compile -s docs",
     "lint": "gts lint",
     "clean": "gts clean",
-    "compile": "microbundle -f esm,cjs,umd",
+    "compile": "microbundle -f esm,cjs,umd && rm -rf build/types && mv -T build/src build/types && rm -rf build/src build/test && mv -t build build/types/src build/types/test && rm -rf build/types",
     "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
